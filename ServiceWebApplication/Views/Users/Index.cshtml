@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ServiceApp.Domain.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="RegisterForm">Create New</a>
+</p>
+<div style="background-color:lavender; padding: 15px;">
+    <h2>All users:</h2>
+
+    @foreach (var item in Model)
+    {
+        <div style="background-color:antiquewhite; margin: 10px; padding-left: 15px;">
+            @Html.DisplayFor(modelItem => item.Name)
+            <ul>
+                <li>
+                    <a asp-action="Details" asp-route-id="@item.Id">Info</a>
+                </li>
+            </ul>
+        </div>
+    }
+
+
+</div>
